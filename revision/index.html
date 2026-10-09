@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Decohere Revisions</title>
+    <style type="text/css">
+        :root {
+            color-scheme: light dark;
+            --base-color: oklch(89.271% 0.18381 96.618);
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        ::selection {
+            background-color: var(--base-color);
+            color: #000000;
+        }
+
+        main {
+            margin: 9.55%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--base-color);
+            text-transform: uppercase;
+            margin-bottom: 1.91rem;
+        }
+
+        p,
+        li,
+        a {
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.91rem;
+        }
+
+        ol {
+            list-style: none;
+        }
+
+        li {
+            outline: 1px solid var(--base-color);
+            padding: 1.618rem;
+            margin-bottom: 1.618rem;
+        }
+
+        h2 {
+            font-size: 1.618rem;
+            margin-bottom: 0.618rem;
+        }
+
+        h2 a {
+            color: inherit;
+        }
+
+        time,
+        .latest {
+            font-size: 0.875rem;
+        }
+
+        .latest {
+            color: var(--base-color);
+        }
+
+        .notes {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        .notes ul {
+            margin-top: 0.618rem;
+            margin-left: 1.618rem;
+        }
+
+        .notes li {
+            outline: none;
+            padding: 0;
+            margin-bottom: 0.382rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Revisions</h1>
+        <p><a href="/">Back to Decohere</a></p>
+        <p>Every revision of this page is kept here. Link to a version with /revision/major/minor/patch, or to just
+            a major or minor version (like /revision/1) to get the newest revision within it.</p>
+
+        <!--
+            Newest first. Each entry's data-version is also read by /404.html to resolve
+            /revision/x/y/z requests, so keep it in sync with the folder under /revision/.
+        -->
+        <ol>
+            <li data-version="1.1.0">
+                <h2><a href="/revision/1/1/0/">1.1.0</a></h2>
+                <time datetime="2026-10-09">2026-10-09</time> <span class="latest">(latest)</span>
+                <div class="notes">
+                    <p>Minor revision:</p>
+                    <ul>
+                        <li>Add revisions history page</li>
+                        <li>Add revision 1.0.0 to revisions history page</li>
+                        <li>Add current version to index</li>
+                        <li>Add link to revisions history page from index</li>
+                        <li>Fix typos</li>
+                    </ul>
+                </div>
+            </li>
+            <li data-version="1.0.0">
+                <h2><a href="/revision/1/0/0/">1.0.0</a></h2>
+                <time datetime="2026-10-09">2026-10-09</time>
+                <div class="notes">
+                    <p>Initial revision.</p>
+                </div>
+            </li>
+        </ol>
+    </main>
+</body>
+
+</html>
