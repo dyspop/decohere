@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Decohere
+    </title>
+    <style type="text/css">
+        /* RESET */
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :where(html) {
+            color-scheme: light dark;
+            hanging-punctuation: first allow-end last;
+            interpolate-size: allow-keywords;
+            scroll-behavior: smooth;
+            scrollbar-gutter: stable;
+            text-size-adjust: none;
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialias;
+        }
+
+        :where(html.translated-rtl) {
+            direction: rtl;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            :where(html) {
+                scroll-behavior: auto;
+            }
+        }
+
+        :where(body) {
+            min-block-size: 100svb;
+            min-inline-size: 300px;
+        }
+
+        :where(canvas, img, picture, svg, video) {
+            block-size: auto;
+            border: none;
+            display: block;
+            max-inline-size: 100%;
+        }
+
+        :where(button, input, progress, select, textarea) {
+            appearance: none;
+            background: transparent;
+            border: none;
+            color: inherit;
+            font: inherit;
+            hanging-punctuation: none;
+            line-height: inherit;
+            text-align: start;
+            touch-action: manipulation;
+        }
+
+        :where(button) {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        :where(textarea) {
+            resize: vertical;
+        }
+
+        :where(textarea:not([rows])) {
+            field-sizing: content;
+        }
+
+        :where(fieldset, iframe) {
+            border: none;
+        }
+
+        :where(p, li, h1, h2, h3, h4, h5, h6) {
+            overflow-wrap: break-word;
+            text-wrap: pretty;
+        }
+
+        :where(abbr[title]) {
+            border: none;
+            text-decoration: none;
+        }
+
+        :where(cite) {
+            font-style: inherit;
+        }
+
+        :where(small) {
+            font-size: inherit;
+        }
+
+        :where(li, ol, ul) {
+            list-style: none;
+        }
+
+        :where(dialog, [popover]) {
+            background: transparent;
+            border: none;
+            color: inherit;
+            margin: auto;
+            max-block-size: none;
+            max-inline-size: none;
+            position: fixed;
+        }
+
+        :where([popover]) {
+            inset: auto;
+        }
+
+        :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+            display: none;
+        }
+
+        :where([hidden]:not([hidden="until-found"])) {
+            display: none !important;
+        }
+    </style>
+    <style type="text/css">
+        :root {
+            /* ---- Colors (OKLCH) ---- */
+            /* ok l c h ( Lightness, Chroma, Hue ) */
+
+            /* Golden Ratio */
+            --base-modulo: 1.618;
+            --base-color: oklch(89.271% 0.18381 96.618);
+            --base-font-size: 16px;
+        }
+
+        /* Target all browsers */
+        ::selection {
+            background-color: var(--base-color);
+            /* Changes the highlight background */
+            color: #000000;
+            /* Changes the text color inside the highlight */
+        }
+
+        /* Target older Mozilla Firefox versions */
+        ::-moz-selection {
+            background-color: var(--base-color);
+            color: #000000;
+        }
+
+        /* Basic styles */
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        section {
+            margin: 19.1%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        hr,
+        ul {
+            margin-bottom: 1.91rem;
+        }
+
+        p,
+        li,
+        a,
+        span {
+            font-weight: 600;
+        }
+
+        ul {
+            outline: 1px solid var(--base-color);
+            padding: 1.618%;
+        }
+
+        h1 {
+            font-size: calc(var(--base-font-size) * 6);
+            color: var(--base-color);
+            text-transform: uppercase;
+            line-height: 0.618em;
+        }
+
+        h1:hover {
+            height: 100%;
+            line-height: 0.618em;
+            box-sizing: content-box;
+            max-height: 1lh;
+            overflow: visible;
+            cursor: wait !important
+        }
+
+        h1:hover span {
+            display: block;
+        }
+
+        h2 {
+            font-size: calc(var(--base-font-size) * 5);
+        }
+
+
+        h3 {
+            font-size: calc(var(--base-font-size) * 4);
+        }
+
+        h4 {
+            font-size: calc(var(--base-font-size) * 3);
+        }
+
+        ul li {
+            margin-left: 9.55%;
+            margin-bottom: 1.618%;
+        }
+
+        /* Laptop */
+        @media (max-width: 1024px) {}
+
+        /* Tablet */
+        @media (max-width: 768px) {}
+
+        /* Mobile (Large) */
+        @media (max-width: 425px) {}
+
+        /* Mobile (Medium) */
+        @media (max-width: 375px) {}
+
+        /* Mobile (Small) */
+        @media (max-width: 320px) {}
+    </style>
+</head>
+
+<body>
+    <section>
+        <header>
+            <h1><span>De</span><span>co</span><span>here</span></h1>
+            <p>The philosophy of identifying moments of clarity through introspection and common understandings
+                in order to promote flourishing. Only this core statement shall remain unchanged.</p>
+        </header>
+    </section>
+    <section>
+        <h2>Goals</h2>
+        <p>Why "Decohere"? This foundation's goal is to promote human flourishing by building a philosophy of
+            purposeful, guided,
+            and beneficial decoherence of the shadow.</p>
+    </section>
+    <section>
+        <h2>Guiding Principles</h2>
+        <p>
+            The principles laid out here form the loosely held tenets which we believe could lead to human flourishing.
+        </p>
+        <h4>Introspection</h4>
+        <h4>Humility</h4>
+        <h4>Authenticity</h4>
+        <h4>Accountability</h4>
+        <h4>Self Governance / Individuation</h4>
+        <h4>Collective Conscience</h4>
+        <p>Not to be confused with collective consciousness or the collective unconscious, this principle lays out the
+            idea that we are all here
+            together, in different ways. Some of the effects of our actions may have varying impacts on individuals,
+            groups, cultures, societies.
+        <h4>Alignment</h4>
+        <p>Probably one of the most distinct ideas of Decohere is the idea that humanity can align.
+            "Come together" but with an explicit, study-able, recorded meaning. This alignment doesn't need to be one.
+            It can be many under the umbrella of Decohere.</p>
+        <h4>Portability</h4>
+        <p>Because the core tenets through their alignment allow it, each of them may be "picked" for use in life as we
+            need.</p>
+        <h4>Judgement</h4>
+        <p>Through convention we must draw some lines in the sand, though some may be fuzzy, moving and evolving.</p>
+    </section>
+    <section>
+
+        <h2>The Lotus of the Logos</h2>
+        <p>
+            We accept the observational findings of the occultic and hidden knowledge traditions but reject the
+            integration of the shadow as the final, or even as a necessary step in enlightenment. Enlightenment has
+            many
+            paths, who are we to
+            judge? You are you to judge. Some common philosophies with overlapping potentially convergent philosophy:
+        </p>
+        <ul>
+            <li>✝️ The teachings of Jesus</lI>
+            <li>🪷 The teachings of the Buddhas</li>
+            <li>🌈 Luciferianism</li>
+            <li>☯️ Taoism</li>
+            <li>🗳️ Democratic Socialism</li>
+            <li>🤝 Sociology</li>
+
+            <li>Naive cultural reference frameworks such as the Jedi order
+            <li>? more (or less) to come as we convene...</li>
+        </ul>
+
+    </section>
+    <section>
+        <h2>Leadership</h2>
+        <p>Leadership is anarchic and any mantle is temporary.</p>
+        <p>For the purposes of organizational clarity, the authors of this document are the leadaers of this philosophy,
+            insomuchas a philosophy could have a leader other than by its amorphic identity.</p>
+    </section>
+    <section>
+        <h2>Events</h2>
+        <p>Group sessions will be held through various telecommunications channels as needed. Event links and
+            calendar
+            events will be posted here.
+    </section>
+    <section>
+        <h2>Archive</h2>
+        <p>This site will self-serve as a living archive. All updates will be time-stamped and previous pages will
+            be
+            accessible through clear links and access interfaces.</p>
+        <p>All changes to this page will be explained by the consensus arraived at by those who participate. Wiki might
+            be a good technology for this (it must be evaluated).</p>
+    </section>
+    <section>
+        <h2>Honors</h2>
+        <p>To those who:</p>
+        <ul>
+            <li>🧐 with enduring curiosity</li>
+            <li>✅ apply rigor</li>
+            <li>🤝 are cohesive</li>
+            <li>🩸 sacrifice for the greater good</li>
+            <li>🗣️ speak truth to power</li>
+            <li>💎 hold their convictions</li>
+            <li>😓 admit their mistakes</li>
+            <li>🦋 aren't afraid to change</li>
+            <li>💕 care, love, and give freely</li>
+            <li>🧱 acknowledge their limitations</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Definitions</h2>
+        <p>Although this philosophy has no intent to cleverly redefine any terms as a form of cultural spell-casting, it
+            is nonetheless ineherent in building a system of thought that key terms should be described with as
+            specific, literal and semantic as possible. Although the common/plain American English definition du jour
+            should be assumed if there's no definition laid out otherwise. If there is a definition, note that </p>
+
+        <p>The core work of the initial conventions will be to mold these definitions so that by introspecting upon them
+            and our lived experiences we may contemplate our suffering and joy to contribute to the potential
+            flourishing. If a definition is found to have too heavy a bias against this, or a flaw in its semantics, or
+            a construction that breaks the core tenets, it will be revised for better contextualization or excised
+            altogether if found to be untenable. Some words are better at being self-evident, that's just how it is.</p>
+
+        <ul>
+            <li>
+                <h4>Commonality</h4>
+                <p>Like so many ideas, commonality can be evaluated both as a spectrum but also stochastically when
+                    appropriate and useful.</p>
+            </li>
+            <li>
+                <h4>Promote</h4>
+                <p>Any action that results in increased joy and decreased pointless suffering, both overall and,
+                    ideally,
+                    approaching totally.</p>
+            </li>
+            <li>
+                <h4>Flourishing</h4>
+                <p>This is a tough one. Let's be careful.</p>
+            </li>
+            <li>
+                <h4>Human</h4>
+                <p>One important question this philopophy seeks to answer is what is "human"? A very relavant concern is
+                    to consider these concepts within the scope of Machine Learning, Generateive Adversarial Networks,
+                    Large Language Models, Agentic Evolution, Artificial Intelligence, Artificial General Intelligence,
+                    and Artificial Super Intelligence, among other emerging phenomenon.</p>
+            </li>
+
+        </ul>
+    </section>
+    <section>
+        <h2>Acknowledgements</h2>
+        <p>This is messy, but that's life
+        <p>
+        <p>This is not a cult</p>
+        <p>Anyone who seeks power over you does not have flourishing's best interests at heart</p>
+        <p>We are only an authority collectively</p>
+    </section>
+
+    <section>
+        <footer><s>&copy;2026 Decohere</s> We revoke our copyright. There is no license
+            because you don't explicitly need one beyond that which you've been granted by the gift of your
+            beautiful
+            being.</footer>
+    </section>
+
+</body>
+
+</html>
